@@ -11,7 +11,7 @@ Instead of grabbing a perfect, clean dataset, I purposely chose a **"dirty" reta
 Before answering any business questions, I had to fix the foundation. Here is how I tackled the mess:
 
 1.  **Recovering "Lost" Data (My Favorite Part):**
-    I found rows where the `Item Name` was missing (NULL), but the `Price` was there. Instead of deleting these rows, I wrote a **Self-Join** query. It looked for *other* transactions with the same price and category to "fill in the blanks" for the missing names. This saved roughly **[X]** rows of data!
+    I found rows where the `Item Name` was missing (NULL), but the `Price` was there. Instead of deleting these rows, I wrote a **Self-Join** query. It looked for *other* transactions with the same price and category to "fill in the blanks" for the missing names. This saved roughly **268+** rows of data!
     
 2.  **The Duplicate Trap:**
     Simple `DISTINCT` commands weren't enough. I used aggregation logic to identify transaction IDs that appeared twice and removed the erroneous duplicates while keeping the valid data.
@@ -21,7 +21,7 @@ Before answering any business questions, I had to fix the foundation. Here is ho
 
 ## 📊 What I Found (The Insights)
 Once the data was clean, I ran the numbers.
-* **Top Performer:** The **[Insert Category]** category is our biggest revenue driver.
+* **Top Performer:** The **BUTCHERS** category is our biggest revenue driver.
 * **Growth Trends:** Using Window Functions (Running Totals), I tracked how sales accumulated over the month, noticing a clear spike during **[Period]**.
 
 ## 🛠️ Tech Stack
